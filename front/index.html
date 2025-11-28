@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recorrido TSP - Animaciones</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content">
+        <p class="eyebrow">Visualización TSP</p>
+        <h1>Animaciones del recorrido</h1>
+        <p class="lede">
+          Comparación visual de la ruta óptima calculada de forma exhaustiva y la heurística de vecino más cercano.
+          Ejecuta <code>python main.py</code> para regenerar los GIF en <code>animaciones/</code>.
+        </p>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="grid">
+        <article class="card">
+          <div class="card__header">
+            <p class="pill">Exhaustivo</p>
+            <h2>Ruta óptima</h2>
+            <p class="muted">Evalúa todas las permutaciones fijando la ciudad inicial.</p>
+          </div>
+          <div class="media">
+            <img
+              src="../animaciones/anim_exhaustivo.gif"
+              alt="Animación del algoritmo exhaustivo mostrando la ruta óptima"
+            />
+          </div>
+          <p class="caption">Archivo generado: <code>animaciones/anim_exhaustivo.gif</code></p>
+        </article>
+
+        <article class="card">
+          <div class="card__header">
+            <p class="pill pill--blue">Heurística</p>
+            <h2>Vecino más cercano</h2>
+            <p class="muted">Construye la ruta agregando siempre el nodo más cercano aún no visitado.</p>
+          </div>
+          <div class="media">
+            <img
+              src="../animaciones/anim_vecino_mas_cercano.gif"
+              alt="Animación del algoritmo de vecino más cercano"
+            />
+          </div>
+          <p class="caption">Archivo generado: <code>animaciones/anim_vecino_mas_cercano.gif</code></p>
+        </article>
+      </section>
+
+      <section class="section-heading">
+        <div>
+          <p class="eyebrow">Imágenes estáticas</p>
+          <h2>Mapas y gráficos generados</h2>
+          <p class="muted">
+            Capturas que acompañan a las animaciones: mapa base, heatmap de distancias, grafo y rutas finales.
+          </p>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article class="card">
+          <div class="card__header">
+            <p class="pill">Mapa</p>
+            <h2>Ubicación de ciudades</h2>
+            <p class="muted">Distribución geográfica renderizada con Cartopy.</p>
+          </div>
+          <div class="media">
+            <img src="../imagenes/mapa_ciudades.png" alt="Mapa de las ciudades utilizadas en el TSP" />
+          </div>
+          <p class="caption">Archivo: <code>imagenes/mapa_ciudades.png</code></p>
+        </article>
+
+        <article class="card">
+          <div class="card__header">
+            <p class="pill pill--blue">Heatmap</p>
+            <h2>Matriz de distancias</h2>
+            <p class="muted">Mapa de calor de las distancias Haversine entre ciudades.</p>
+          </div>
+          <div class="media">
+            <img src="../imagenes/heatmap_haversine.png" alt="Heatmap de distancias Haversine entre ciudades" />
+          </div>
+          <p class="caption">Archivo: <code>imagenes/heatmap_haversine.png</code></p>
+        </article>
+
+        <article class="card">
+          <div class="card__header">
+            <p class="pill">Grafo</p>
+            <h2>k vecinos más cercanos</h2>
+            <p class="muted">Grafo de distancias conectando cada ciudad con sus vecinos más cercanos.</p>
+          </div>
+          <div class="media">
+            <img src="../imagenes/grafo_distancias.png" alt="Grafo de distancias entre ciudades" />
+          </div>
+          <p class="caption">Archivo: <code>imagenes/grafo_distancias.png</code></p>
+        </article>
+
+        <article class="card">
+          <div class="card__header">
+            <p class="pill pill--blue">Exhaustivo</p>
+            <h2>Ruta óptima (estática)</h2>
+            <p class="muted">Camino cerrado resultante de evaluar todas las permutaciones.</p>
+          </div>
+          <div class="media">
+            <img src="../imagenes/ruta_optima.png" alt="Ruta óptima calculada mediante búsqueda exhaustiva" />
+          </div>
+          <p class="caption">Archivo: <code>imagenes/ruta_optima.png</code></p>
+        </article>
+
+        <article class="card">
+          <div class="card__header">
+            <p class="pill">Heurística</p>
+            <h2>Ruta vecino más cercano</h2>
+            <p class="muted">Camino generado añadiendo el nodo no visitado más próximo.</p>
+          </div>
+          <div class="media">
+            <img src="../imagenes/ruta_nn.png" alt="Ruta generada por la heurística de vecino más cercano" />
+          </div>
+          <p class="caption">Archivo: <code>imagenes/ruta_nn.png</code></p>
+        </article>
+      </section>
+
+      <section class="steps">
+        <div>
+          <h3>Cómo reproducir</h3>
+          <ol>
+            <li>Instala dependencias de visualización (matplotlib, cartopy, seaborn, networkx).</li>
+            <li>Ejecuta <code>python main.py</code> desde la raíz del proyecto.</li>
+            <li>Abre esta página estática: <code>front/index.html</code>.</li>
+          </ol>
+        </div>
+        <div>
+          <h3>Archivos generados</h3>
+          <ul>
+            <li><code>animaciones/</code> contiene los GIF de cada algoritmo.</li>
+            <li><code>imagenes/</code> guarda mapas, heatmaps y rutas estáticas.</li>
+            <li><code>historiales/</code> exporta los CSV con los pasos evaluados.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Trabajo práctico de rutas TSP - Grafos.</p>
+    </footer>
+  </body>
+</html>

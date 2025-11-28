@@ -20,3 +20,7 @@
 - Mapas y gráficos estáticos se guardan en `imagenes/`: `mapa_ciudades.png`, `heatmap_haversine.png`, `grafo_distancias.png`, `ruta_optima.png`, `ruta_nn.png`.
 - Animaciones GIF del proceso se guardan en `animaciones/`: `anim_exhaustivo.gif` y `anim_vecino_mas_cercano.gif`.
 - Para generar las gráficas se requieren las dependencias de visualización (`matplotlib`, `seaborn`, `cartopy`, `networkx`) instaladas en el entorno.
+
+## Página estática para ver las animaciones
+- Abre `front/index.html` en tu navegador para ver ambos GIF con una breve descripción.
+- Ejecuta `python main.py` desde la raíz para regenerar `animaciones/anim_exhaustivo.gif` y `animaciones/anim_vecino_mas_cercano.gif` antes de actualizar la página.
